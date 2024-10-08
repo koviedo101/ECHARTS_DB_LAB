@@ -1,0 +1,10 @@
+CREATE TABLE `tipo_gasto` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   `company_id` int DEFAULT NULL,
+   `deleted_at` timestamp NULL DEFAULT NULL,
+   `nombre` varchar(150) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `indx_nombre_tipo_gasto` (`nombre`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`renato`@`%` SQL SECURITY DEFINER VIEW `v_selectable_services` AS select `t`.`id` AS `id`,`t`.`nombre` AS `display`,'currency' AS `suggestion_type`,concat('Q',format(`t`.`precio`,2)) AS `suggestion_display`,`t`.`precio` AS `suggestion_value`,`t`.`id` AS `suggestion_key`,`t`.`company_id` AS `company_id` from `tarifario` `t`

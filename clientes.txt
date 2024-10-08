@@ -1,0 +1,17 @@
+CREATE TABLE `clientes` (
+   `nombre` varchar(500) DEFAULT NULL,
+   `id` int NOT NULL AUTO_INCREMENT,
+   `direccion` varchar(500) DEFAULT NULL,
+   `nit` varchar(500) DEFAULT NULL,
+   `proyecto_id` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   `company_id` int DEFAULT NULL,
+   `deleted_at` timestamp NULL DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `proyecto_id` (`proyecto_id`),
+   KEY `created_by` (`created_by`),
+   KEY `company_id` (`company_id`),
+   CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`),
+   CONSTRAINT `clientes_ibfk_3` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

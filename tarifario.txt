@@ -1,0 +1,10 @@
+CREATE TABLE `tarifario` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `nombre` varchar(750) DEFAULT NULL,
+   `precio` decimal(15,2) DEFAULT NULL,
+   `notas` varchar(750) DEFAULT NULL,
+   `company_id` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

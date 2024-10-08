@@ -1,0 +1,11 @@
+CREATE TABLE `facturas_emitidas` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `fecha` date DEFAULT NULL,
+   `serie` varchar(500) DEFAULT NULL,
+   `numero` varchar(500) DEFAULT NULL,
+   `descripcion` varchar(500) DEFAULT NULL,
+   `monto` decimal(15,2) DEFAULT '0.00',
+   `project_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

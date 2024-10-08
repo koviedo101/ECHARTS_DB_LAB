@@ -1,0 +1,11 @@
+CREATE TABLE `gastos_no_deducibles` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `fecha` date DEFAULT NULL,
+   `descripcion` varchar(500) DEFAULT NULL,
+   `monto` decimal(15,2) DEFAULT '0.00',
+   `project_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `tipo_gasto_id` int DEFAULT NULL,
+   `responsable` varchar(300) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

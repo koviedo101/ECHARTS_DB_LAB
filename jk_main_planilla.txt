@@ -1,0 +1,21 @@
+CREATE TABLE `jk_main_planilla` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `employee` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `fecha` date DEFAULT NULL,
+   `total` decimal(10,2) DEFAULT NULL,
+   `extra_hours` decimal(10,2) DEFAULT NULL,
+   `extra_payment` decimal(10,2) DEFAULT NULL,
+   `hours` decimal(10,2) DEFAULT NULL,
+   `net_hours` decimal(10,2) DEFAULT NULL,
+   `ordinary_hours` decimal(10,2) DEFAULT NULL,
+   `ordinary_payment` decimal(10,2) DEFAULT NULL,
+   `reached_objective` tinyint(1) DEFAULT NULL,
+   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+   `took_break` tinyint(1) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `uk_employee_fecha` (`employee`,`fecha`),
+   KEY `fk_planilla_responsible` (`created_by`),
+   CONSTRAINT `fk_employee` FOREIGN KEY (`employee`) REFERENCES `trabajadores` (`id`),
+   CONSTRAINT `fk_planilla_responsible` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=1042 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

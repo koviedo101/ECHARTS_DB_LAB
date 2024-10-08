@@ -1,0 +1,15 @@
+CREATE TABLE `cotizaciones` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `notas` varchar(750) DEFAULT NULL,
+   `cantidad` int DEFAULT '1',
+   `precio` decimal(15,2) DEFAULT '0.00',
+   `service_id` int DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   KEY `proyecto_cotizado_fk` (`project_id`),
+   KEY `servicio_cotizado` (`service_id`),
+   CONSTRAINT `cotizaciones_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+   CONSTRAINT `cotizaciones_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `tarifario` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

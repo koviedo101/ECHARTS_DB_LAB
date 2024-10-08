@@ -1,0 +1,9 @@
+CREATE TABLE `logs` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `notas` varchar(1000) DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `created_by` (`created_by`),
+   CONSTRAINT `logs_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

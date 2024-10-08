@@ -1,0 +1,9 @@
+CREATE TABLE `roles` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `rol` varchar(250) NOT NULL,
+   `default_screen` int DEFAULT NULL,
+   `allow_creation` tinyint(1) DEFAULT '0',
+   PRIMARY KEY (`id`),
+   KEY `default_screen` (`default_screen`),
+   CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`default_screen`) REFERENCES `screens` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

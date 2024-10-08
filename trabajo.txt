@@ -1,0 +1,17 @@
+CREATE TABLE `trabajo` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `fecha` date DEFAULT NULL,
+   `inicio` time DEFAULT NULL,
+   `fin` time DEFAULT NULL,
+   `notas` varchar(500) DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `employee_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   KEY `indx_fecha_trabajada` (`fecha`),
+   KEY `proyecto_trabajado_fk` (`project_id`),
+   KEY `trabajador_fk` (`employee_id`),
+   CONSTRAINT `trabajo_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+   CONSTRAINT `trabajo_ibfk_2` FOREIGN KEY (`employee_id`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=816 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

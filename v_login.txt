@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`renato`@`%` SQL SECURITY DEFINER VIEW `v_login` AS select `t`.`id` AS `id`,lower(concat(substr(`t`.`nombre`,1,1),'.',substring_index(`t`.`nombre`,' ',-(1)),'.',substring_index(`c`.`f_nombre`,' ',1))) AS `username`,`t`.`password` AS `password` from (`trabajadores` `t` join `companies` `c` on((`c`.`id` = `t`.`empresa`)))

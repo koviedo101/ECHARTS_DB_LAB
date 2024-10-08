@@ -1,0 +1,25 @@
+CREATE TABLE `calculated_work` (
+   `fecha` date NOT NULL,
+   `day` tinyint NOT NULL,
+   `period` varchar(75) DEFAULT NULL,
+   `period_id` varchar(10) DEFAULT NULL,
+   `employee_id` int NOT NULL,
+   `employee` varchar(250) DEFAULT NULL,
+   `inicio` varchar(10) DEFAULT NULL,
+   `fin` varchar(10) DEFAULT NULL,
+   `horas` tinyint DEFAULT NULL,
+   `objetivo` tinyint DEFAULT '8',
+   `almuerzo` tinyint(1) DEFAULT '0',
+   `extra` tinyint DEFAULT '0',
+   `ordinario` tinyint DEFAULT '0',
+   `pago_extra` tinyint DEFAULT '0',
+   `septimo` decimal(10,2) DEFAULT NULL,
+   `employee_salary` decimal(10,2) DEFAULT '0.00',
+   `employee_extra_rate` decimal(5,2) DEFAULT '1.50',
+   `proportion` varchar(250) DEFAULT NULL,
+   PRIMARY KEY (`fecha`,`employee_id`),
+   KEY `fk_worked_employee` (`employee_id`),
+   CONSTRAINT `fk_worked_employee` FOREIGN KEY (`employee_id`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+ d53AB537$437/90B

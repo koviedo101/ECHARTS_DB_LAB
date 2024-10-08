@@ -1,0 +1,19 @@
+CREATE TABLE `companies` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `f_nombre` varchar(750) DEFAULT NULL,
+   `f_alias` varchar(750) DEFAULT NULL,
+   `f_descripcion` varchar(750) DEFAULT NULL,
+   `f_logo` varchar(750) DEFAULT NULL,
+   `f_primary_color` varchar(750) DEFAULT NULL,
+   `f_secondary_color` varchar(750) DEFAULT NULL,
+   `f_renta` float NOT NULL DEFAULT '0',
+   `f_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `f_visited_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `f_deleted_at` timestamp NULL DEFAULT NULL,
+   `f_icon` varchar(750) DEFAULT NULL,
+   `deleted_at` timestamp NULL DEFAULT NULL,
+   `direccion` varchar(200) DEFAULT NULL,
+   `telefono` varchar(50) DEFAULT NULL,
+   `nit` varchar(50) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

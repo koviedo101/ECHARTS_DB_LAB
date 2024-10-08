@@ -1,0 +1,9 @@
+CREATE TABLE `gastos` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `precio` decimal(15,2) DEFAULT NULL,
+   `descripcion` varchar(750) DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

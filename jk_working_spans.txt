@@ -1,0 +1,16 @@
+CREATE TABLE `jk_working_spans` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `work_id` int DEFAULT NULL,
+   `start_time` time DEFAULT NULL,
+   `end_time` time DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `project_id` (`project_id`),
+   KEY `work_id` (`work_id`),
+   KEY `created_by` (`created_by`),
+   CONSTRAINT `jk_working_spans_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+   CONSTRAINT `jk_working_spans_ibfk_2` FOREIGN KEY (`work_id`) REFERENCES `jk_main_planilla` (`id`),
+   CONSTRAINT `jk_working_spans_ibfk_3` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=1043 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

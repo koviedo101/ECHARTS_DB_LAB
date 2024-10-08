@@ -1,0 +1,16 @@
+CREATE TABLE `providers` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   `company_id` int DEFAULT NULL,
+   `deleted_at` timestamp NULL DEFAULT NULL,
+   `nit` varchar(50) DEFAULT NULL,
+   `descripcion` varchar(200) DEFAULT NULL,
+   `nombre` varchar(150) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `nit` (`nit`),
+   KEY `created_by` (`created_by`),
+   KEY `company_id` (`company_id`),
+   KEY `indx_descripcion_provider` (`descripcion`),
+   KEY `indx_nombre_provider` (`nombre`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=228 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

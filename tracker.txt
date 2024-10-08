@@ -1,0 +1,10 @@
+CREATE TABLE `tracker` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `action` varchar(250) NOT NULL,
+   `data` text,
+   `created_by` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   KEY `created_by` (`created_by`),
+   CONSTRAINT `tracker_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=1798 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

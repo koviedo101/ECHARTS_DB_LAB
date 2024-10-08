@@ -1,0 +1,18 @@
+CREATE TABLE `facturas_recibidas` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `fecha` date DEFAULT NULL,
+   `monto` decimal(15,2) DEFAULT '0.00',
+   `provider_id` int DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `created_by` int DEFAULT NULL,
+   `tipo_gasto_id` int DEFAULT NULL,
+   `serie` varchar(25) NOT NULL,
+   `numero` varchar(25) NOT NULL,
+   `descripcion` varchar(200) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `serie` (`serie`,`numero`),
+   KEY `indx_fecha_factura_recibida` (`fecha`),
+   KEY `indx_serie_facturas` (`serie`),
+   KEY `indx_numero_facturas` (`numero`),
+   KEY `indx_descripcion_facturas` (`descripcion`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

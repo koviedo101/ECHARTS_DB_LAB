@@ -1,0 +1,101 @@
+const data = [
+  { id: '0', name: 'AJUSTES', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '1', name: 'CALCULATED_WORK', symbolSize: 6, itemStyle: { color: '#0000ff' } },
+  { id: '2', name: 'CALCULATED_WORK_PER_PROJECT', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '3', name: 'CLIENTES', symbolSize: 5, itemStyle: { color: '#0000ff' } },
+  { id: '4', name: 'COMPANIES', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '5', name: 'COTIZACIONES', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '6', name: 'DESCANSOS', symbolSize: 11, itemStyle: { color: '#0000ff' } },
+  { id: '7', name: 'ESTADOS', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '8', name: 'ESTADOS_HERRAMIENTA', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '9', name: 'FACTURAS_EMITIDAS', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '10', name: 'FACTURAS_RECIBIDAS', symbolSize: 5, itemStyle: { color: '#0000ff' } },
+  { id: '11', name: 'FESTIVIDADES', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '12', name: 'GASTOS', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '13', name: 'GASTOS_NO_DEDUCIBLES', symbolSize: 3, itemStyle: { color: '#0000ff' } },
+  { id: '14', name: 'HERRAMIENTAS', symbolSize: 5, itemStyle: { color: '#0000ff' } },
+  { id: '15', name: 'JK_MAIN_PLANILLA', symbolSize: 40, itemStyle: { color: '#0000ff' } },
+  { id: '16', name: 'JK_PLANILLA_DISTRIBUTION', symbolSize: 60, itemStyle: { color: '#0000ff' }}, 
+  { id: '17', name: 'Jk_WORKING_SPANS', symbolSize: 60, itemStyle: { color: '#0000ff' } },
+  { id: '18', name: 'LOGS', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '19', name: 'MATERIALES', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '20', name: 'PROJECTS', symbolSize: 9, itemStyle: { color: '#0000ff' } },
+  { id: '21', name: 'PROVIDERS', symbolSize: 7, itemStyle: { color: '#0000ff' } },
+  { id: '22', name: 'ROL_ACCESS', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '23', name: 'ROLES', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '24', name: 'SCREENS', symbolSize: 3, itemStyle: { color: '#0000ff' } },
+  { id: '25', name: 'SERVICIOS', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '26', name: 'TARIFARIO', symbolSize: 6, itemStyle: { color: '#0000ff' }}, 
+  { id: '27', name: 'TIPO_AJUSTES', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '28', name: 'TIPO_GASTO', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '29', name: 'TIPO_TRANSACCION', symbolSize: 1, itemStyle: { color: '#0000ff' } },
+  { id: '30', name: 'TRABAJADORES', symbolSize: 4, itemStyle: { color: '#0000ff' } },
+  { id: '31', name: 'TRABAJO', symbolSize: 50, itemStyle: { color: '#0000ff' } },
+  { id: '32', name: 'TRACKER', symbolSize: 100, itemStyle: { color: '#0000ff' } },
+  { id: '33', name: 'TRANSACCIONES', symbolSize: 5, itemStyle: { color: '#0000ff' } },
+  { id: '34', name: 'WORK_SINGULARITIES', symbolSize: 1, itemStyle: { color: '#0000ff' } 
+  }
+];
+
+const edges = [
+  { source: '0', target: '30', symbol: ['none', 'arrow'] },  // Flecha en dirección a Node 1
+  { source: '1', target: '30', symbol: ['none', 'arrow'] },  // Flecha en dirección a Node 2
+  { source: '2', target: '30', symbol: ['none', 'arrow'] },  
+  { source: '3', target: '30', symbol: ['none', 'arrow'] },   
+  { source: '3', target: '4', symbol: ['none', 'arrow'] },
+  { source: '5', target: '20', symbol: ['none', 'arrow'] },  
+  { source: '5', target: '26', symbol: ['none', 'arrow'] },   
+  { source: '15', target: '30', symbol: ['none', 'arrow'] },  
+  { source: '16', target: '20', symbol: ['none', 'arrow'] },
+  { source: '16', target: '30', symbol: ['none', 'arrow'] },
+  { source: '16', target: '15', symbol: ['none', 'arrow'] },  
+  { source: '17', target: '20', symbol: ['none', 'arrow'] },   
+  { source: '17', target: '15', symbol: ['none', 'arrow'] },
+  { source: '17', target: '30', symbol: ['none', 'arrow'] },
+  { source: '18', target: '30', symbol: ['none', 'arrow'] },
+  { source: '23', target: '24', symbol: ['none', 'arrow'] },  
+  { source: '25', target: '30', symbol: ['none', 'arrow'] },
+  { source: '27', target: '30', symbol: ['none', 'arrow'] },
+  { source: '30', target: '23', symbol: ['none', 'arrow'] },
+  { source: '30', target: '4', symbol: ['none', 'arrow'] },  
+  { source: '31', target: '20', symbol: ['none', 'arrow'] },
+  { source: '31', target: '30', symbol: ['none', 'arrow'] },
+  { source: '32', target: '30', symbol: ['none', 'arrow'] }
+];
+
+option = {
+  series: [
+    {
+      type: 'graph',
+      layout: 'force',
+      animation: false,
+      data: data,
+      force: {
+        repulsion: 100,
+        edgeLength: 50
+      },
+      edges: edges,
+      roam: true,
+      label: {
+        show: true,
+        position: 'top',
+        formatter: '{b}',
+        color: '#000000',
+        fontSize: 12
+      },
+      itemStyle: {
+        color: '#000'  // Color por defecto de los nodos si no se especifica
+      },
+      edgeSymbol: ['none', 'arrow'],  // Flecha por defecto en los edges
+      edgeSymbolSize: [10, 10],  // Tamaño de las flechas
+      lineStyle: {
+        color: '#aaa',  // Color de las líneas (edges)
+        width: 2,  // Grosor de las líneas
+        curveness: 0.2  // Curvatura de las líneas para darle estilo a las conexiones
+      }
+    }
+  ]
+};
+
+// Render the chart
+myChart.setOption(option);

@@ -1,0 +1,12 @@
+CREATE TABLE `transacciones` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `fecha` date NOT NULL,
+   `cobro` decimal(15,2) DEFAULT '0.00',
+   `pago` decimal(15,2) DEFAULT '0.00',
+   `tipo_transaccion_id` int DEFAULT NULL,
+   `factura_id` int DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   `deleted_at` timestamp NULL DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

@@ -1,0 +1,15 @@
+CREATE TABLE `jk_planilla_distribution` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `work_id` int DEFAULT NULL,
+   `project_id` int DEFAULT NULL,
+   `portion` decimal(5,2) DEFAULT NULL,
+   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `project_id` (`project_id`),
+   KEY `created_by` (`created_by`),
+   KEY `work_id` (`work_id`),
+   CONSTRAINT `jk_planilla_distribution_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+   CONSTRAINT `jk_planilla_distribution_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`),
+   CONSTRAINT `jk_planilla_distribution_ibfk_3` FOREIGN KEY (`work_id`) REFERENCES `jk_main_planilla` (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=1042 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

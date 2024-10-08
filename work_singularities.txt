@@ -1,0 +1,12 @@
+CREATE TABLE `work_singularities` (
+   `id` int NOT NULL AUTO_INCREMENT,
+   `notes` varchar(250) DEFAULT NULL,
+   `reason` varchar(100) DEFAULT 'Ausente',
+   `fecha` date DEFAULT NULL,
+   `year` int DEFAULT NULL,
+   `month` int DEFAULT NULL,
+   `day` int DEFAULT NULL,
+   `employee_id` int DEFAULT NULL,
+   `company_id` int NOT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

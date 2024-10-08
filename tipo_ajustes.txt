@@ -1,0 +1,10 @@
+CREATE TABLE `tipo_ajustes` (
+   `nombre` varchar(100) DEFAULT NULL,
+   `id` int NOT NULL AUTO_INCREMENT,
+   `descripcion` varchar(750) DEFAULT NULL,
+   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `created_by` int DEFAULT NULL,
+   PRIMARY KEY (`id`),
+   KEY `created_by` (`created_by`),
+   CONSTRAINT `tipo_ajustes_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `trabajadores` (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
