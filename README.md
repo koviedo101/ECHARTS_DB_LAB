@@ -1,1 +1,2 @@
 # ECHARTS_DB_LAB
+Este repositorio contiene las consultas realizadas en MySQL para 34 tablas y 43 vistas, con sus respectivas uniones definidas mediante restricciones de llaves foráneas. Las tablas están representadas en color azul y las vistas en color verde. El tamaño de los nodos es proporcional a la cantidad de registros, donde el valor máximo de 1,797 registros corresponde a un `symbolSize` de 100, y el mínimo, con 1 registro, corresponde a un `symbolSize` de 1.
