@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`renato`@`%` SQL SECURITY DEFINER VIEW `i_materiales_totales` AS select `p`.`id` AS `id`,sum(`m`.`valor`) AS `total` from (`projects` `p` left join `materiales` `m` on((`p`.`id` = `m`.`project_id`))) group by `p`.`id`

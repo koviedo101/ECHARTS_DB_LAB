@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`renato`@`%` SQL SECURITY DEFINER VIEW `employee_available_projects` AS select `p`.`id` AS `id`,`p`.`nombre` AS `project`,`e`.`id` AS `employee_id` from ((`projects` `p` left join `companies` `c` on((`c`.`id` = `p`.`company_id`))) left join `trabajadores` `e` on((`e`.`empresa` = `c`.`id`)))

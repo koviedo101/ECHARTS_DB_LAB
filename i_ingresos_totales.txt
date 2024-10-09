@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`renato`@`%` SQL SECURITY DEFINER VIEW `i_ingresos_totales` AS select `p`.`id` AS `id`,sum((`c`.`precio` * `c`.`cantidad`)) AS `total` from (`projects` `p` left join `cotizaciones` `c` on((`p`.`id` = `c`.`project_id`))) group by `p`.`id`
